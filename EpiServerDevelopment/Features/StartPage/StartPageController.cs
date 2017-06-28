@@ -1,14 +1,14 @@
 ﻿using System.Web.Mvc;
+using EpiServerDevelopment.Features.GlobalLayout;
 using EPiServer.Web.Mvc;
-using EpiServerDevelopment.Features.Pages;
 
 namespace EpiServerDevelopment.Features.StartPage
 {
     /// <summary>
     /// The StartPageController
     /// </summary>
-    /// <seealso cref="EPiServer.Web.Mvc.PageController{StartPage}" />
-    public class StartPageController : PageController<StartPage>
+    /// <seealso cref="PageControllerBase{TPage}" />
+    public class StartPageController : PageControllerBase<StartPage>
     {
         /// <summary>
         /// Index action of this page
@@ -17,7 +17,11 @@ namespace EpiServerDevelopment.Features.StartPage
         /// <returns></returns>
         public ActionResult Index(StartPage currentPage)
         {
-            var model = PageViewModel.Create(currentPage);
+            var editHints = ViewData.GetEditHints<StartPage, StartPage>();
+            editHints.AddConnection(v => PageLayout.MetaHeaderNavigation, c => c.MetaHeaderNavigation);
+            editHints.AddConnection(v => PageLayout.MetaFooterNavigation, c => c.MetaFooterNavigation);
+
+            var model = currentPage;
 
             return View(model);
         }

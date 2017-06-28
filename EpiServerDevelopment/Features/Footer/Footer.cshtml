@@ -1,11 +1,11 @@
-﻿@model EpiServerDevelopment.Features.Pages.IPageViewModel<EpiServerDevelopment.Features.Pages.LayoutPageDataBase>
+﻿@model EpiServerDevelopment.Features.GlobalLayout.LayoutModel
 
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="footer-manu">
-                    @Html.PropertyFor(p=>p.CurrentPage.MetaFooterNavigation)
+                    @Html.PropertyFor(p=>p.MetaFooterNavigation)
                 </div>
                 <p>Copyright &copy; Crafted by <a href="https://dcrazed.com/">Dcrazed</a>.</p>
             </div>

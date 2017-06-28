@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
 	$("#portfolio-contant-active").mixItUp();
 
 
@@ -9,9 +8,6 @@ $(document).ready(function(){
 		singleItem:true,
 		autoPlay: 3000,
 	});
-
-
-
 
 	$("#clients-logo").owlCarousel({
 		autoPlay: 3000,
@@ -26,15 +22,6 @@ $(document).ready(function(){
 		itemsDesktop : [1199,5],
 		itemsDesktopSmall : [979,5],
 	});
-
-	// Counter
-
-	$('.counter').counterUp({
-		delay: 10,
-		time: 1000
-	});
-
-
 });
 
 

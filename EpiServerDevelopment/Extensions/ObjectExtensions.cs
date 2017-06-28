@@ -37,6 +37,20 @@ namespace EpiServerDevelopment.Extensions
         }
 
         /// <summary>
+        ///Determines whether the object is not null, then executes the action. 
+        /// </summary>
+        /// <typeparam name="TType">The type of the type.</typeparam>
+        /// <param name="obj">The object.</param>
+        /// <param name="whenNotNull">The when not null.</param>
+        public static void IsNotNull<TType>(this TType obj, Action<TType> whenNotNull)
+        {
+            if (obj == null)
+                return;
+
+            whenNotNull(obj);
+        }
+
+        /// <summary>
         /// Casts the specified object.
         /// </summary>
         /// <typeparam name="TType">The type of the cast.</typeparam>

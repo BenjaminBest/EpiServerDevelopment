@@ -1,9 +1,9 @@
-﻿@using EPiServer.Core
-@using EPiServer.Web.Mvc.Html
+﻿@using System.Web.Mvc.Html
 @using System.Web.Optimization
+@using EpiServerDevelopment.Features.GlobalLayout
 @using EPiServer.Editor
 
-@model EpiServerDevelopment.Features.Pages.IPageViewModel<EpiServerDevelopment.Features.Pages.LayoutPageDataBase>
+@inherits BaseWebViewPage
 
 <!DOCTYPE html>
 
@@ -23,7 +23,7 @@
     {
         @*Add edit mode specific css*@
         @Scripts.Render("editmode-css");
-    }
+    }   
 </head>
 <body>
 <div>
@@ -31,7 +31,7 @@
     
     
 <!-- Header Start -->
-    @{ Html.RenderPartial("Header", Model);}
+    @{ Html.RenderPartial("Header", PageLayout);}
         
 <!-- Slider Start -->
 <section id="slider">
@@ -254,7 +254,7 @@
 
     
 <!-- footer Start -->
-    @{ Html.RenderPartial("Footer", Model); }
+    @{ Html.RenderPartial("Footer", PageLayout); }
  
 
 </div>

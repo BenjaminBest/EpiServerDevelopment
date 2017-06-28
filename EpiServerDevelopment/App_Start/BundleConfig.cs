@@ -30,7 +30,7 @@ namespace EpiServerDevelopment
                 "~/Resources/js/owl.carousel.min.js",
                 "~/Resources/js/plugins.js",
                 "~/Resources/js/waypoints.min.js",
-                "~/Resources/js/js/main.js")
+                "~/Resources/js/main.js")
             );
 
             bundles.Add(new ScriptBundle("~/bundles/editmode-css").Include(

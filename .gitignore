@@ -3,3 +3,4 @@ obj/
 .vs/
 packages/
 EpiServerDevelopment/EpiServerDevelopment.csproj.user
+EpiServerDevelopment/App_Data/EPiServerErrors.log

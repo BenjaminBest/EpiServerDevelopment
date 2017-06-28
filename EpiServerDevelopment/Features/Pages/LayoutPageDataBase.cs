@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using EpiServerDevelopment.Features.Base;
+using EpiServerDevelopment.Features.GlobalLayout;
 using EpiServerDevelopment.Features.MetaNavigation;
 
 namespace EpiServerDevelopment.Features.Pages
@@ -7,7 +8,7 @@ namespace EpiServerDevelopment.Features.Pages
     /// <summary>
     /// LayoutPageDataBase is used as a base class for all page types that support the layout settings
     /// </summary>
-    public abstract class LayoutPageDataBase : PageDataBase, IPageMetaNavigation
+    public abstract class LayoutPageDataBase : PageDataBase, IPageLayout
     {
         [Display(
             Name = "Header Meta Navigation",
