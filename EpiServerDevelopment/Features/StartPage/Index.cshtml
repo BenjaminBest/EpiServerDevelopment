@@ -1,0 +1,11 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model EpiServerDevelopment.Features.Pages.IPageViewModel<EpiServerDevelopment.Features.StartPage.StartPage>
+
+    @{
+        Layout = "~/Features/Shared/Layouts/_Layout.cshtml";
+    }
+    <div>
+        @Html.PropertyFor(m => m.CurrentPage.MainContent)
+    </div>
