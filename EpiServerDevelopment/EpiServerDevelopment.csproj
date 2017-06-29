@@ -60,6 +60,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPiCode.SqlBlobProvider, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\EPiCode.SqlBlobProvider.1.4.2\lib\net45\EPiCode.SqlBlobProvider.dll</HintPath>
+    </Reference>
     <Reference Include="EPiServer, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>packages\EPiServer.CMS.Core.10.8.0\lib\net45\EPiServer.dll</HintPath>
     </Reference>
@@ -220,20 +223,30 @@
     <Compile Include="Features\GlobalLayout\PageContextActionFilter.cs" />
     <Compile Include="Features\GlobalLayout\PageViewContextFactory.cs" />
     <Compile Include="Features\GlobalLayout\StructureMapDependencyResolver.cs" />
+    <Compile Include="Features\Header\IHasHeader.cs" />
+    <Compile Include="Features\Images\ConfigurableModule.cs" />
+    <Compile Include="Features\Images\ContentReferenceExtensions.cs" />
+    <Compile Include="Features\Images\IImageFileSizeRetriever.cs" />
+    <Compile Include="Features\Images\Image.cs" />
+    <Compile Include="Features\Images\IImageSizeRetriever.cs" />
+    <Compile Include="Features\Images\ImageFileSizeRetriever.cs" />
+    <Compile Include="Features\Images\ImageSizeRetriever.cs" />
+    <Compile Include="Features\Images\InitializableModule.cs" />
     <Compile Include="Features\Pages\ConfigurableModule.cs" />
     <Compile Include="Features\Pages\IPageHierarchyResolver.cs" />
-    <Compile Include="Features\Pages\LayoutPageDataBase.cs" />
+    <Compile Include="Features\GlobalLayout\LayoutPageDataBase.cs" />
     <Compile Include="Features\GlobalLayout\PageControllerBase.cs" />
     <Compile Include="Features\Pages\PageDataBase.cs" />
     <Compile Include="Features\IndividualViewLocation\ContentViewEngine.cs" />
     <Compile Include="Features\IndividualViewLocation\ViewEngineRegistration.cs" />
-    <Compile Include="Features\MetaNavigation\IPageMetaNavigation.cs" />
+    <Compile Include="Features\MetaNavigation\IHasPageMetaNavigation.cs" />
     <Compile Include="Features\MetaNavigation\MetaNavigationBlock.cs" />
     <Compile Include="Features\MetaNavigation\MetaNavigationBlockController.cs" />
     <Compile Include="Features\MetaNavigation\MetaNavigationBlockViewModel.cs" />
     <Compile Include="Features\Pages\PageHierarchyResolver.cs" />
     <Compile Include="Features\StartPage\StartPage.cs" />
     <Compile Include="Features\StartPage\StartPageController.cs" />
+    <Compile Include="Features\Teasers\ITeaser.cs" />
     <Compile Include="Features\Urls\Link.cs" />
     <Compile Include="Features\Urls\LinkTargetType.cs" />
     <Compile Include="Features\Urls\LinkTargetTypeExtensions.cs" />
@@ -243,10 +256,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Teasers\" />
+    <Folder Include="Features\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="apple-touch-icon-precomposed.png" />
     <Content Include="favicon.ico" />
     <Content Include="Features\Web.config" />
     <Content Include="Global.asax" />
@@ -317,6 +329,7 @@
     <Content Include="Features\MetaNavigation\Index.cshtml" />
     <Content Include="Features\Header\Header.cshtml" />
     <Content Include="Features\Footer\Footer.cshtml" />
+    <Content Include="Features\Images\DisplayTemplates\Image.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

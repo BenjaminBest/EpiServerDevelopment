@@ -2,9 +2,20 @@
 
 @model EpiServerDevelopment.Features.StartPage.StartPage
 
-    @{
-        Layout = "~/Features/Shared/Layouts/_Layout.cshtml";
-    }
-    <div>
-        @Html.PropertyFor(m => m.MainContent)
+@{
+    Layout = "~/Features/Shared/Layouts/_Layout.cshtml";
+}
+
+<!-- Slider Start -->
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <div class="block">
+                    <h1 class="animated fadeInUp uppercase" @Html.EditAttributes(p=>Model.SubTitle)>@Model.SubTitle</h1>
+                    <p class="animated fadeInUp" @Html.EditAttributes(p => Model.Description)>@Model.Description</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>

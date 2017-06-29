@@ -26,26 +26,15 @@
     }   
 </head>
 <body>
-<div>
-    @RenderBody()    
-    
-    
-<!-- Header Start -->
+<div>    
+    <!-- Header Start -->
     @{ Html.RenderPartial("Header", PageLayout);}
-        
-<!-- Slider Start -->
-<section id="slider">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-2">
-                <div class="block">
-                    <h1 class="animated fadeInUp">A DIGITAL MARKETING &#38; <br> DESIGN AGENCY</h1>
-                    <p class="animated fadeInUp">We love the Web and the work we do.We work closely with our </br> clients to deliver the best possible solutions for their needs</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Header End -->     
+    
+    <!-- Body Start-->    
+    @RenderBody()    
+    <!-- Body End-->    
+
 <!-- Wrapper Start -->
 <section id="intro">
     <div class="container">
@@ -253,9 +242,9 @@
 </section>
 
     
-<!-- footer Start -->
+    <!-- footer Start -->
     @{ Html.RenderPartial("Footer", PageLayout); }
- 
+    <!-- footer End -->
 
 </div>
 </body>

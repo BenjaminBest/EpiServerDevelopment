@@ -1,4 +1,7 @@
-﻿using EpiServerDevelopment.Features.MetaNavigation;
+﻿using System.ComponentModel.DataAnnotations;
+using EpiServerDevelopment.Features.MetaNavigation;
+using EPiServer.Core;
+using EPiServer.Web;
 
 namespace EpiServerDevelopment.Features.GlobalLayout
 {
@@ -24,6 +27,15 @@ namespace EpiServerDevelopment.Features.GlobalLayout
         public MetaNavigationBlock MetaFooterNavigation { get; set; }
 
         /// <summary>
+        /// Gets or sets the logo.
+        /// </summary>
+        /// <value>
+        /// The logo.
+        /// </value>
+        [UIHint(UIHint.Image)]
+        public ContentReference Logo { get; set; }
+
+        /// <summary>
         /// Maps the properties of the specified page to this layout model
         /// </summary>
         /// <param name="page">The page.</param>
@@ -31,6 +43,7 @@ namespace EpiServerDevelopment.Features.GlobalLayout
         {
             MetaHeaderNavigation = page.MetaHeaderNavigation;
             MetaFooterNavigation = page.MetaFooterNavigation;
+            Logo = page.Logo;
         }
     }
 }

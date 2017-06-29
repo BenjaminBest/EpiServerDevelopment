@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EpiServerDevelopment.Features.GlobalLayout;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EpiServerDevelopment.Features.Pages;
 
 namespace EpiServerDevelopment.Features.StartPage
 {

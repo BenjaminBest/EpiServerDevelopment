@@ -1,0 +1,13 @@
+﻿@using EpiServerDevelopment.Features.Images
+@using EPiServer.Web.Routing
+
+@model EPiServer.Core.ContentReference
+
+@{
+    var image = Model.AsImage();
+}
+
+@if (image != null)
+{
+    <img src="@UrlResolver.Current.GetUrl(image.ContentLink)" alt="@image.Description">
+}
