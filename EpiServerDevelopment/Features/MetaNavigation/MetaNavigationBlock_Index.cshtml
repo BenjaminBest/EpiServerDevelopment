@@ -1,0 +1,10 @@
+﻿@using EPiServer.Web.Mvc.Html
+
+@model EpiServerDevelopment.Features.MetaNavigation.MetaNavigationBlockViewModel
+
+<ul class="nav navbar-nav navbar-right">
+    @foreach (var link in Model.Links)
+    {
+        <li><a target="@link.Target.ToString()" href="@link.Href">@link.Caption</a></li>
+    }
+</ul>

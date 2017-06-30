@@ -214,6 +214,10 @@
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Features\Base\BlockDataBase.cs" />
     <Compile Include="Features\Base\GroupNames.cs" />
+    <Compile Include="Features\ContactPage\ContactPage.cs" />
+    <Compile Include="Features\ContactPage\ContactPageController.cs" />
+    <Compile Include="Features\Images\LongExtensions.cs" />
+    <Compile Include="Features\OverviewPage\OverviewPage.cs" />
     <Compile Include="Features\GlobalLayout\BaseWebViewPage.cs" />
     <Compile Include="Features\GlobalLayout\ConfigurableModule.cs" />
     <Compile Include="Features\GlobalLayout\IControllerSupportsLayout.cs" />
@@ -232,10 +236,11 @@
     <Compile Include="Features\Images\ImageFileSizeRetriever.cs" />
     <Compile Include="Features\Images\ImageSizeRetriever.cs" />
     <Compile Include="Features\Images\InitializableModule.cs" />
+    <Compile Include="Features\OverviewPage\OverviewPageController.cs" />
     <Compile Include="Features\Pages\ConfigurableModule.cs" />
     <Compile Include="Features\Pages\IPageHierarchyResolver.cs" />
     <Compile Include="Features\GlobalLayout\LayoutPageDataBase.cs" />
-    <Compile Include="Features\GlobalLayout\PageControllerBase.cs" />
+    <Compile Include="Features\GlobalLayout\LayoutPageControllerBase.cs" />
     <Compile Include="Features\Pages\PageDataBase.cs" />
     <Compile Include="Features\IndividualViewLocation\ContentViewEngine.cs" />
     <Compile Include="Features\IndividualViewLocation\ViewEngineRegistration.cs" />
@@ -255,9 +260,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Features\Shared\DisplayTemplates\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Features\Web.config" />
@@ -314,7 +317,7 @@
     <Content Include="modules\_protected\CMS\CMS.zip" />
     <Content Include="modules\_protected\EPiServer.Packaging.UI\web.config" />
     <Content Include="modules\_protected\EPiServer.Packaging.UI\EPiServer.Packaging.UI.zip" />
-    <Content Include="Features\StartPage\Index.cshtml" />
+    <Content Include="Features\StartPage\StartPage_Index.cshtml" />
     <Content Include="Features\Shared\Layouts\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Resources\fonts\fontawesome-webfont.eot" />
@@ -326,10 +329,12 @@
     <Content Include="Resources\fonts\ionicons.woff" />
     <Content Include="Resources\less\responsive.less" />
     <Content Include="Resources\less\style.less" />
-    <Content Include="Features\MetaNavigation\Index.cshtml" />
+    <Content Include="Features\MetaNavigation\MetaNavigationBlock_Index.cshtml" />
     <Content Include="Features\Header\Header.cshtml" />
     <Content Include="Features\Footer\Footer.cshtml" />
     <Content Include="Features\Images\DisplayTemplates\Image.cshtml" />
+    <Content Include="Features\OverviewPage\OverviewPage_Index.cshtml" />
+    <Content Include="Features\ContactPage\ContactPage_Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

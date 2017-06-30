@@ -36,21 +36,17 @@ namespace EpiServerDevelopment.Features.Images
         /// <param name="content">The content.</param>
         private static void SetSize(Image content)
         {
-            //TODO: Fix StackOverFlowException
-            //try
-            //{
-            //    System.Drawing.Image image;
-            //    using (var stream = content.BinaryData.OpenRead())
-            //    {
-            //        image = System.Drawing.Image.FromStream(stream, false);
-            //        image.IsNotNull(i => content.SetSize(i.Width, i.Height));
-
-            //        image.Dispose();
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //}
+            using (var stream = content.BinaryData.OpenRead())
+            {
+                using (var image = System.Drawing.Image.FromStream(stream, false))
+                {
+                    if (!image.Height.ToString().Equals(content.Height) ||
+                        !image.Width.ToString().Equals(content.Width))
+                    {
+                        content.SetSize(image.Width, image.Height);
+                    }
+                }
+            }
         }
     }
 }

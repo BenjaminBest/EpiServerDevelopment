@@ -69,7 +69,7 @@ namespace EpiServerDevelopment.Features.Images
         {
             var image = CreateWritableClone().As<Image>();
 
-            image.FileSize = fileSize.ToString();
+            image.FileSize = Formatter.FormatAsFileSize(fileSize);
 
             DataFactory.Instance.Save(image, SaveAction.Default);
         }

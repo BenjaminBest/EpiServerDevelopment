@@ -7,8 +7,8 @@ namespace EpiServerDevelopment.Features.StartPage
     /// <summary>
     /// The StartPageController
     /// </summary>
-    /// <seealso cref="PageControllerBase{TPage}" />
-    public class StartPageController : PageControllerBase<StartPage>
+    /// <seealso cref="LayoutPageControllerBase{TPage}" />
+    public class StartPageController : LayoutPageControllerBase<StartPage>
     {
         /// <summary>
         /// Index action of this page

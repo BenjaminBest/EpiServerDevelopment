@@ -6,7 +6,7 @@ using EPiServer.DataAnnotations;
 
 namespace EpiServerDevelopment.Features.StartPage
 {
-    [ContentType(DisplayName = "StartPage", GUID = "b2298cf3-3b51-4469-a160-014cfcd349ce", Description = "This is the start page")]
+    [ContentType(DisplayName = "StartPage", GUID = "b2298cf3-3b51-4469-a160-014cfcd349ce", Description = "The start page is the root page of a site and provides layout settings")]
     public class StartPage : LayoutPageDataBase
     {
         [CultureSpecific]
