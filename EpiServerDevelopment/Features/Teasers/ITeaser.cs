@@ -29,7 +29,15 @@ namespace EpiServerDevelopment.Features.Teasers
         /// <value>
         /// The description.
         /// </value>
-        string Description { get; set; }
+        XhtmlString Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the button caption.
+        /// </summary>
+        /// <value>
+        /// The button caption.
+        /// </value>
+        string ButtonCaption { get; set; }
 
         /// <summary>
         /// Gets or sets the images.

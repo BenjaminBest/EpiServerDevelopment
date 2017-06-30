@@ -6,7 +6,7 @@ using EPiServer.DataAnnotations;
 
 namespace EpiServerDevelopment.Features.ContentPage
 {
-    [ContentType(DisplayName = "ContactPage", GUID = "49713820-7478-45cb-b569-734dc61e44d7", Description = "The contact page provides possibilities to contact the site owner")]
+    [ContentType(DisplayName = "ContactPage", GUID = "E94C06CC-CFA3-4A7F-8D6D-D352D26D5C52", Description = "The contact page provides possibilities to contact the site owner")]
     public class ContentPage : PageDataBase
     {
         [CultureSpecific]

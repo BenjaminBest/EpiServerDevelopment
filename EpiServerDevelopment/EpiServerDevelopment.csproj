@@ -214,6 +214,8 @@
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Features\Base\BlockDataBase.cs" />
     <Compile Include="Features\Base\GroupNames.cs" />
+    <Compile Include="Features\ContentPage\ContentPage.cs" />
+    <Compile Include="Features\ContentPage\ContentPageController.cs" />
     <Compile Include="Features\ContactPage\ContactPage.cs" />
     <Compile Include="Features\ContactPage\ContactPageController.cs" />
     <Compile Include="Features\Images\LongExtensions.cs" />
@@ -262,6 +264,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="ClientResources\js\extended-field.js" />
     <Content Include="favicon.ico" />
     <Content Include="Features\Web.config" />
     <Content Include="Global.asax" />
@@ -335,6 +338,8 @@
     <Content Include="Features\Images\DisplayTemplates\Image.cshtml" />
     <Content Include="Features\OverviewPage\OverviewPage_Index.cshtml" />
     <Content Include="Features\ContactPage\ContactPage_Index.cshtml" />
+    <Content Include="Features\ContentPage\ContentPage_Index.cshtml" />
+    <Content Include="module.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,7 +5,6 @@ using EpiServerDevelopment.Features.MetaNavigation;
 using EpiServerDevelopment.Features.Pages;
 using EPiServer.Core;
 using EPiServer.DataAnnotations;
-using EPiServer.Web;
 
 namespace EpiServerDevelopment.Features.GlobalLayout
 {

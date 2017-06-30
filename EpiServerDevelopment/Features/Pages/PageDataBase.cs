@@ -53,7 +53,21 @@ namespace EpiServerDevelopment.Features.Pages
             Description = "The description for this page when used in a teaser",
             GroupName = TabNames.Teaser,
             Order = 300)]
-        public virtual string Description { get; set; }
+        public virtual XhtmlString Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the button caption.
+        /// </summary>
+        /// <value>
+        /// The button caption.
+        /// </value>
+        [CultureSpecific]
+        [Display(
+            Name = "Button Caption",
+            Description = "The caption of the button (if available) for this page when used in a teaser",
+            GroupName = TabNames.Teaser,
+            Order = 400)]
+        public virtual string ButtonCaption { get; set; }
 
         /// <summary>
         /// Gets or sets the images.
@@ -65,7 +79,7 @@ namespace EpiServerDevelopment.Features.Pages
             Name = "Images",
             Description = "The available images for this page when used in a teaser",
             GroupName = TabNames.Teaser,
-            Order = 400)]
+            Order = 500)]
         [AllowedTypes(typeof(ImageData))]
         public virtual ContentArea Images { get; set; }
 
@@ -77,7 +91,7 @@ namespace EpiServerDevelopment.Features.Pages
         {
             Title = PageTypeName;
             SubTitle = $"This is the subtitle of {PageTypeName}";
-            Description = $"This is the description of {PageTypeName}";
+            Description = new XhtmlString($"This is the description of {PageTypeName}");
 
             base.SetDefaultValues(contentType);
         }
