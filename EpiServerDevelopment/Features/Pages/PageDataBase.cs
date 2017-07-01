@@ -92,6 +92,7 @@ namespace EpiServerDevelopment.Features.Pages
             Title = PageTypeName;
             SubTitle = $"This is the subtitle of {PageTypeName}";
             Description = new XhtmlString($"This is the description of {PageTypeName}");
+            ButtonCaption = "View More";
 
             base.SetDefaultValues(contentType);
         }

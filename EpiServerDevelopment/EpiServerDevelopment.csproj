@@ -218,6 +218,10 @@
     <Compile Include="Features\ContentPage\ContentPageController.cs" />
     <Compile Include="Features\ContactPage\ContactPage.cs" />
     <Compile Include="Features\ContactPage\ContactPageController.cs" />
+    <Compile Include="Features\DisplayOptions\InitializationModule.cs" />
+    <Compile Include="Features\DisplayOptions\PartialContentController.cs" />
+    <Compile Include="Features\Images\ContentAreaExtensions.cs" />
+    <Compile Include="Features\Images\ImageExtensions.cs" />
     <Compile Include="Features\Images\LongExtensions.cs" />
     <Compile Include="Features\OverviewPage\OverviewPage.cs" />
     <Compile Include="Features\GlobalLayout\BaseWebViewPage.cs" />
@@ -253,10 +257,15 @@
     <Compile Include="Features\Pages\PageHierarchyResolver.cs" />
     <Compile Include="Features\StartPage\StartPage.cs" />
     <Compile Include="Features\StartPage\StartPageController.cs" />
+    <Compile Include="Features\Teasers\ConfigurableModule.cs" />
+    <Compile Include="Features\Teasers\DefaultTeaserViewModel.cs" />
     <Compile Include="Features\Teasers\ITeaser.cs" />
+    <Compile Include="Features\Teasers\ITeaserViewModelFactory.cs" />
+    <Compile Include="Features\Teasers\TeaserViewModelFactory.cs" />
     <Compile Include="Features\Urls\Link.cs" />
     <Compile Include="Features\Urls\LinkTargetType.cs" />
     <Compile Include="Features\Urls\LinkTargetTypeExtensions.cs" />
+    <Compile Include="Features\Validation\ContentAreaItemsMaxAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -340,6 +349,9 @@
     <Content Include="Features\ContactPage\ContactPage_Index.cshtml" />
     <Content Include="Features\ContentPage\ContentPage_Index.cshtml" />
     <Content Include="module.config" />
+    <Content Include="Features\Teasers\LeftTextTeaser.cshtml" />
+    <Content Include="Features\Teasers\RightTextWithImageTeaser.cshtml" />
+    <Content Include="Features\Teasers\CallToActionTeaser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

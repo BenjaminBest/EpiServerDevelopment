@@ -1,0 +1,16 @@
+﻿@using EPiServer.Web.Routing
+@model EpiServerDevelopment.Features.Teasers.DefaultTeaserViewModel
+
+<section id="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>@Model.Title</h2>
+                    <p>@Model.SubTitle</p>
+                    <a class="btn btn-default btn-call-to-action" href="@UrlResolver.Current.GetUrl(@Model.Link)">@Model.ButtonCaption</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

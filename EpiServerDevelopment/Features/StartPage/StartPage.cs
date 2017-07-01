@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using EpiServerDevelopment.Features.GlobalLayout;
+using EpiServerDevelopment.Features.Validation;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
@@ -15,5 +16,13 @@ namespace EpiServerDevelopment.Features.StartPage
             Description = "The main content",
             GroupName = SystemTabNames.Content)]
         public virtual ContentArea MainContent { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            Name = "Call to action",
+            Description = "The call to action",
+            GroupName = SystemTabNames.Content)]
+        [ContentAreaMaxItems(1)]
+        public virtual ContentArea CallToAction { get; set; }
     }
 }

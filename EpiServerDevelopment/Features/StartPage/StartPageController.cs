@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using EpiServerDevelopment.Features.GlobalLayout;
+using EpiServerDevelopment.Features.Images;
 using EPiServer.Web.Mvc;
 
 namespace EpiServerDevelopment.Features.StartPage

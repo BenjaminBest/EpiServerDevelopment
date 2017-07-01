@@ -1,5 +1,4 @@
-﻿using System;
-using EpiServerDevelopment.Extensions;
+﻿using EpiServerDevelopment.Extensions;
 using EPiServer;
 
 namespace EpiServerDevelopment.Features.Images

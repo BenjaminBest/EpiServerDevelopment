@@ -47,36 +47,7 @@ namespace EpiServerDevelopment.Features.IndividualViewLocation
                 .Union(AllFolders())
                 .ToArray();
 
-
-            foreach (var loc in locations)
-            {
-                Debug.WriteLine(loc);
-            }
-
             return locations;
-        }
-
-        /// <summary>Creates a partial view using the specified controller context and partial path.</summary>
-        /// <returns>The partial view.</returns>
-        /// <param name="controllerContext">The controller context.</param>
-        /// <param name="partialPath">The path to the partial view.</param>
-        protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)
-        {
-            Debug.WriteLine($"Searching for controller [1] {controllerContext.Controller} with partialPath {partialPath}");
-
-            return base.CreatePartialView(controllerContext, partialPath);
-        }
-
-        /// <summary>Creates a view by using the specified controller context and the paths of the view and master view.</summary>
-        /// <returns>The view.</returns>
-        /// <param name="controllerContext">The controller context.</param>
-        /// <param name="viewPath">The path to the view.</param>
-        /// <param name="masterPath">The path to the master view.</param>
-        protected override IView CreateView(ControllerContext controllerContext, string viewPath, string masterPath)
-        {
-            Debug.WriteLine($"Searching for controller [1] {controllerContext.Controller} with viewPath {viewPath} and masterPath {masterPath} ");
-
-            return base.CreateView(controllerContext, viewPath, masterPath);
         }
 
         /// <summary>

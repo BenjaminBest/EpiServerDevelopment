@@ -11,15 +11,21 @@ namespace EpiServerDevelopment.Features.Images
     public static class ContentReferenceExtensions
     {
         /// <summary>
+        /// Gets or sets the content loader.
+        /// </summary>
+        /// <value>
+        /// The content loader.
+        /// </value>
+        private static Injected<IContentLoader> ContentLoader { get; set; }
+
+        /// <summary>
         /// Returns the image based on the given <paramref name="content"/>
         /// </summary>
         /// <param name="content">The content.</param>
         /// <returns></returns>
         public static Image AsImage(this ContentReference content)
         {
-            var locator = ServiceLocator.Current.GetInstance<IContentLoader>();
-
-            return content.IsNotNull(c => locator.Get<Image>(c));
+            return content == null ? null : content.IsNotNull(c => ContentLoader.Service.Get<Image>(c));
         }
     }
 }
