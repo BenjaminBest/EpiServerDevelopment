@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using EpiServerDevelopment.Extensions;
 using EPiServer.Web.Mvc;
 using EpiServerDevelopment.Features.Urls;
+using EPiServer.Web.Routing;
 
 namespace EpiServerDevelopment.Features.MetaNavigation
 {
@@ -21,7 +22,7 @@ namespace EpiServerDevelopment.Features.MetaNavigation
         {
             var model = new MetaNavigationBlockViewModel
             {
-                Links = currentBlock.Links.IsNotNull(l => l.Select(ll => new Link(ll.Text, ll.Href))) ?? Enumerable.Empty<Link>()
+                Links = currentBlock.Links.IsNotNull(l => l.Select(ll => new Link(ll.Text, UrlResolver.Current.GetUrl(ll.ToContentReference())))) ?? Enumerable.Empty<Link>()
             };
 
             return PartialView(model);

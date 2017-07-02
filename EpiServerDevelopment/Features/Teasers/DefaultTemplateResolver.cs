@@ -11,76 +11,14 @@ namespace EpiServerDevelopment.Features.Teasers
     /// The class DefaultTemplateResolver provides the mapping for the most commen case
     /// </summary>
     /// <seealso cref="ITemplateResolver" />
-    public class DefaultTemplateResolver : ITemplateResolver
+    public class DefaultTemplateResolver : BaseTemplateResolver
     {
-        /// <summary>
-        /// Gets the type of the supported source content.
-        /// </summary>
-        /// <value>
-        /// The type of the supported source content.
-        /// </value>
-        public Type SupportedSourceContentType { get; }
-
-        /// <summary>
-        /// Gets the supported view model.
-        /// </summary>
-        /// <value>
-        /// The supported view model.
-        /// </value>
-        public Type SupportedViewModel { get; }
-
-        /// <summary>
-        /// Sets the display name of the view in the display options menu.
-        /// </summary>
-        /// <value>
-        /// The name name of the view in the display options menu.
-        /// </value>
-        public string DisplayOptionsName { get; }
-
-        /// <summary>
-        /// Gets the render tag.
-        /// </summary>
-        /// <value>
-        /// The render tag.
-        /// </value>
-        public string RenderTag { get; }
-
-        /// <summary>
-        /// Gets the image minimum dimensions.
-        /// </summary>
-        /// <value>
-        /// The image minimum dimensions.
-        /// </value>
-        public Size ImageMinDimensions { get; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DefaultTemplateResolver"/> class.
         /// </summary>
         public DefaultTemplateResolver()
-            : this("Default", "Default", new Size(0, 0), typeof(PageDataBase), typeof(DefaultTemplateViewModel))
+            : base("Default", "Default", new Size(0, 0), typeof(PageDataBase), typeof(DefaultTemplateViewModel))
         {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DefaultTemplateResolver" /> class.
-        /// </summary>
-        /// <param name="displayOptionsName">Display name of the options.</param>
-        /// <param name="renderTag">The render tag.</param>
-        /// <param name="imageMinDimensions">The image minimum dimensions.</param>
-        /// <param name="supportedSourceContentType">Type of the supported source content.</param>
-        /// <param name="supportedViewModel">The supported view model.</param>
-        public DefaultTemplateResolver(
-            string displayOptionsName,
-            string renderTag,
-            Size imageMinDimensions,
-            Type supportedSourceContentType,
-            Type supportedViewModel)
-        {
-            DisplayOptionsName = displayOptionsName;
-            RenderTag = renderTag;
-            ImageMinDimensions = imageMinDimensions;
-            SupportedSourceContentType = supportedSourceContentType;
-            SupportedViewModel = supportedViewModel;
         }
 
         /// <summary>
@@ -88,7 +26,7 @@ namespace EpiServerDevelopment.Features.Teasers
         /// </summary>
         /// <param name="content">The content.</param>
         /// <returns></returns>
-        public virtual object GetViewModel(object content)
+        public override object GetViewModel(object content)
         {
             var source = content.As<PageDataBase>();
 

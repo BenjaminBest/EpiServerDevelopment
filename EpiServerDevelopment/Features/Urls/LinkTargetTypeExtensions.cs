@@ -12,7 +12,7 @@
         /// <returns>
         /// A <see cref="string" /> that represents this instance.
         /// </returns>
-        public static string ToString(this LinkTargetType target)
+        public static string ToHtmlString(this LinkTargetType target)
         {
             switch (target)
             {
@@ -21,7 +21,7 @@
                 case LinkTargetType.Self:
                     return "_self";
                 default:
-                    return "_blank";
+                    return "_self";
             }
         }
     }

@@ -20,7 +20,7 @@ namespace EpiServerDevelopment.Features.Images
         /// </returns>
         public static Image OfWidth(this IEnumerable<Image> images, int minWidth)
         {
-            return images.FirstOrDefault(i => int.Parse(i.Width) >= minWidth);
+            return images.FirstOrDefault(i => int.Parse(i.Width) == minWidth);
         }
 
 
@@ -34,7 +34,7 @@ namespace EpiServerDevelopment.Features.Images
         /// </returns>
         public static Image OfHeight(this IEnumerable<Image> images, int minHeight)
         {
-            return images.FirstOrDefault(i => int.Parse(i.Height) >= minHeight);
+            return images.FirstOrDefault(i => int.Parse(i.Height) == minHeight);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace EpiServerDevelopment.Features.Images
         /// </returns>
         public static Image OfSize(this IEnumerable<Image> images, int minWidth, int minHeight)
         {
-            return images.FirstOrDefault(i => int.Parse(i.Height) >= minHeight && int.Parse(i.Width) >= minWidth);
+            return images.FirstOrDefault(i => int.Parse(i.Height) == minHeight && int.Parse(i.Width) == minWidth);
         }
     }
 }

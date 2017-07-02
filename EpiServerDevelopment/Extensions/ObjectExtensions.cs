@@ -37,7 +37,7 @@ namespace EpiServerDevelopment.Extensions
         }
 
         /// <summary>
-        ///Determines whether the object is not null, then executes the action. 
+        /// Determines whether the object is not null, then executes the action. 
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="obj">The object.</param>

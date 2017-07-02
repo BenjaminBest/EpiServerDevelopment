@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Web.Hosting;
+using EpiServerDevelopment.Features.Teasers;
+using WebGrease.Css.Extensions;
 
 namespace EpiServerDevelopment.Features.TemplateResolver
 {
@@ -83,26 +84,34 @@ namespace EpiServerDevelopment.Features.TemplateResolver
                 _templateCollector.CollectTemplates($"{HostingEnvironment.ApplicationPhysicalPath}/Features/Teasers").ToList();
 
             //Get all view resolvers
-            var availableResolvers = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => typeof(ITemplateResolver).IsAssignableFrom(t) && !t.IsAbstract && !t.IsInterface)
-                .Select(t => (ITemplateResolver)Activator.CreateInstance(t)).ToList();
+            var availableResolversTypes = Assembly.GetExecutingAssembly().GetTypes()
+                .Where(t => typeof(ITemplateResolver).IsAssignableFrom(t) && !t.IsAbstract && !t.IsInterface).ToList();
 
             foreach (var item in templates)
             {
+                var availableResolvers = availableResolversTypes.Select(t => (ITemplateResolver)Activator.CreateInstance(t)).ToList();
+
                 //Find directly matching resolvers
-                var matchingResolver = availableResolvers.FirstOrDefault(
+                var matchingResolvers = availableResolvers.Where(
                     r => r.RenderTag.Equals(item.ViewName, StringComparison.InvariantCultureIgnoreCase)
                          && r.SupportedViewModel == item.ViewModelType);
 
                 //Find fallback resolvers which at least support viewmodel
-                if (matchingResolver == null)
+                if (!matchingResolvers.Any())
                 {
-                    matchingResolver = availableResolvers.FirstOrDefault(
+                    matchingResolvers = availableResolvers.Where(
                         r => r.SupportedViewModel == item.ViewModelType);
+
+                    //Add default image dimensions; special resolvers do not need this
+                    matchingResolvers.ForEach(r => r.ImageMinDimensions = DefaultImageDimensions.GetDimensionForTag(item.ViewName));
                 }
 
-                if (matchingResolver != null)
-                    _resolvers.Add(new TemplateResolverRegistryItem(item.ViewName, matchingResolver, item.RelativePath));
+                if (matchingResolvers.Any())
+                {
+                    //Add all resolvers, can be multiple because of different source types mapped to the tag and viewmodel
+                    matchingResolvers.ForEach(r => _resolvers.Add(
+                        new TemplateResolverRegistryItem(item.ViewName, r, item.RelativePath)));
+                }
             }
         }
     }

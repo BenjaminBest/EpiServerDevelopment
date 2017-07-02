@@ -1,7 +1,11 @@
 ﻿@using EPiServer.Web.Routing
 @model EpiServerDevelopment.Features.Teasers.DefaultTemplateViewModel
 
-<section id="call-to-action">
+@{
+    var imageUrl = Model.Image == null ? string.Empty : UrlResolver.Current.GetUrl(Model.Image.ContentLink);
+}
+
+<section id="call-to-action" style="background: url(@imageUrl) no-repeat;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

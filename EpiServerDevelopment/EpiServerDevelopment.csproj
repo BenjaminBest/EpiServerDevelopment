@@ -211,6 +211,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Extensions\LinkItemExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Features\Base\BlockDataBase.cs" />
     <Compile Include="Features\Base\GroupNames.cs" />
@@ -257,6 +258,8 @@
     <Compile Include="Features\Pages\PageHierarchyResolver.cs" />
     <Compile Include="Features\StartPage\StartPage.cs" />
     <Compile Include="Features\StartPage\StartPageController.cs" />
+    <Compile Include="Features\Teasers\DefaultImageDimensions.cs" />
+    <Compile Include="Features\TemplateResolver\BaseTemplateResolver.cs" />
     <Compile Include="Features\TemplateResolver\ConfigurableModule.cs" />
     <Compile Include="Features\Teasers\DefaultTemplateViewModel.cs" />
     <Compile Include="Features\Teasers\ITeaser.cs" />

@@ -36,6 +36,14 @@ namespace EpiServerDevelopment.Features.GlobalLayout
         public ContentReference Logo { get; set; }
 
         /// <summary>
+        /// Gets or sets the start page.
+        /// </summary>
+        /// <value>
+        /// The start page.
+        /// </value>
+        public ContentReference StartPage { get; set; }
+
+        /// <summary>
         /// Maps the properties of the specified page to this layout model
         /// </summary>
         /// <param name="page">The page.</param>
@@ -44,6 +52,7 @@ namespace EpiServerDevelopment.Features.GlobalLayout
             MetaHeaderNavigation = page.MetaHeaderNavigation;
             MetaFooterNavigation = page.MetaFooterNavigation;
             Logo = page.Logo;
+            StartPage = ((IContent)page).ContentLink;
         }
     }
 }

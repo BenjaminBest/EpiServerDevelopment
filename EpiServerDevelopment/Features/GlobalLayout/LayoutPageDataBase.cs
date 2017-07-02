@@ -32,5 +32,8 @@ namespace EpiServerDevelopment.Features.GlobalLayout
         [UIHint("Image")]
         [AllowedTypes(typeof(Image))]
         public virtual ContentReference Logo { get; set; }
+
+        [ScaffoldColumn(true)]
+        public virtual ContentReference StartPage { get; set; }
     }
 }

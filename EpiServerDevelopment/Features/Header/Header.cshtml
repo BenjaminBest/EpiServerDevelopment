@@ -1,4 +1,4 @@
-﻿@using EpiServerDevelopment.Extensions
+﻿@using EPiServer.Web.Routing
 @model EpiServerDevelopment.Features.GlobalLayout.LayoutModel
 
 <header>
@@ -16,7 +16,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="@UrlResolver.Current.GetUrl(Model.StartPage)">
                                 @Html.PropertyFor(p => Model.Logo)                                
                             </a>
                         </div>

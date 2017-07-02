@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace EpiServerDevelopment.Features.TemplateResolver
 {
@@ -39,6 +40,14 @@ namespace EpiServerDevelopment.Features.TemplateResolver
         /// The render tag.
         /// </value>
         string RenderTag { get; }
+
+        /// <summary>
+        /// Gets or sets the image minimum dimensions.
+        /// </summary>
+        /// <value>
+        /// The image minimum dimensions.
+        /// </value>
+        Size ImageMinDimensions { get; set; }
 
         /// <summary>
         /// Gets the view model based on the given <paramref name="content"/>

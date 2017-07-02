@@ -14,5 +14,13 @@ namespace EpiServerDevelopment.Features.Header
         /// The logo.
         /// </value>
         ContentReference Logo { get; set; }
+
+        /// <summary>
+        /// Gets or sets the start page.
+        /// </summary>
+        /// <value>
+        /// The start page.
+        /// </value>
+        ContentReference StartPage { get; set; }
     }
 }
