@@ -1,7 +1,7 @@
 ﻿@using EpiServerDevelopment.Features.Teasers
 @using EPiServer.Web.Routing
 
-@model DefaultTeaserViewModel
+@model DefaultTemplateViewModel
 
 @{
     var imageUrl = Model.Image == null ? string.Empty : UrlResolver.Current.GetUrl(Model.Image.ContentLink);

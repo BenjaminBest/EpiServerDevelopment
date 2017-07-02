@@ -19,6 +19,8 @@
 ### Teaser
 ITeaser, TeaserViewModel,Views, PartialContentController
 
+### Template Resolving
+
 ### Pages Types
 
 #### Start Page
