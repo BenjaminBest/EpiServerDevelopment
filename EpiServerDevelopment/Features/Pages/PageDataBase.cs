@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using EpiServerDevelopment.Features.Base;
-using EpiServerDevelopment.Features.Teasers;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EPiServer.Web;
+using EpiServerDevelopment.Features.Base;
+using EpiServerDevelopment.Features.MetaTags;
+using EpiServerDevelopment.Features.Teasers;
 
 namespace EpiServerDevelopment.Features.Pages
 {
     /// <summary>
     /// PageDataBase is used as a base class for all page types
     /// </summary>
-    public abstract class PageDataBase : PageData, ITeaser
+    public abstract class PageDataBase : PageData, ITeaser, IHasMetaTags
     {
         /// <summary>
         /// Gets or sets the title.
@@ -82,6 +82,19 @@ namespace EpiServerDevelopment.Features.Pages
             Order = 500)]
         [AllowedTypes(typeof(ImageData))]
         public virtual ContentArea Images { get; set; }
+
+        /// <summary>
+        /// Gets or sets the meta tags.
+        /// </summary>
+        /// <value>
+        /// The meta tags.
+        /// </value>
+        [Display(
+            Name = "Meta tags",
+            Description = "The list of meta tags which should be rendered in the head",
+            GroupName = TabNames.MetaTags,
+            Order = 600)]
+        public virtual MetaTagsBlock MetaTags { get; set; }
 
         /// <summary>
         /// Sets the default property values on the page data.

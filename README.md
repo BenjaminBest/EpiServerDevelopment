@@ -35,6 +35,8 @@ Top Teaser, edithints connection to teaser properties
 
 ### Bundling
 
+### Meta Tags
+
 ### Tooltips
 module.config
 /ClientResources/js/extended-field.js
@@ -55,3 +57,5 @@ https://tedgustaf.com/blog/2013/how-to-render-pages-in-a-content-area/
 See IconListTeaser
 #### Autocomplete Dropdown
 See Icon Editor
+#### StringList
+https://tedgustaf.com/blog/2016/custom-editor-for-string-list-properties-in-episerver/

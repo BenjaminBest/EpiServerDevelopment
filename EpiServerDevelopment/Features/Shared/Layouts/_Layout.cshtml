@@ -1,6 +1,7 @@
 ﻿@using System.Web.Mvc.Html
 @using System.Web.Optimization
 @using EpiServerDevelopment.Features.GlobalLayout
+@using EpiServerDevelopment.Features.TemplateResolver
 @using EPiServer.Editor
 
 @inherits BaseWebViewPage
@@ -10,11 +11,11 @@
 <head class="no-js">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Space template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and png in the root directory -->
+    <title>@PageLayout.Title</title>
     
+    @Html.DisplayFor(p=>PageLayout.MetaTags)
+
+    <!-- Place favicon.ico and png in the root directory -->    
     
     @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/js")

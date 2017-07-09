@@ -11,6 +11,12 @@ namespace EpiServerDevelopment.Features.MetaNavigation
         AvailableInEditMode = false)]
     public class MetaNavigationBlock : BlockDataBase
     {
+        /// <summary>
+        /// Gets or sets the links.
+        /// </summary>
+        /// <value>
+        /// The links.
+        /// </value>
         [CultureSpecific]
         [Display(
             Name = "Links",

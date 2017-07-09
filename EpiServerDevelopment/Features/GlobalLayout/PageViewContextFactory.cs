@@ -1,9 +1,7 @@
 ﻿using System.Web.Routing;
+using EPiServer.Core;
 using EpiServerDevelopment.Extensions;
 using EpiServerDevelopment.Features.Pages;
-using EPiServer;
-using EPiServer.Core;
-using EPiServer.Web;
 
 namespace EpiServerDevelopment.Features.GlobalLayout
 {
@@ -13,11 +11,6 @@ namespace EpiServerDevelopment.Features.GlobalLayout
     public class PageViewContextFactory
     {
         /// <summary>
-        /// The content loader
-        /// </summary>
-        private readonly IContentLoader _contentLoader;
-
-        /// <summary>
         /// The page hierarchy resolver
         /// </summary>
         private readonly IPageHierarchyResolver _pageHierarchyResolver;
@@ -25,11 +18,9 @@ namespace EpiServerDevelopment.Features.GlobalLayout
         /// <summary>
         /// Initializes a new instance of the <see cref="PageViewContextFactory" /> class.
         /// </summary>
-        /// <param name="contentLoader">The content loader.</param>
         /// <param name="pageHierarchyResolver">The page hierarchy resolver.</param>
-        public PageViewContextFactory(IContentLoader contentLoader, IPageHierarchyResolver pageHierarchyResolver)
+        public PageViewContextFactory(IPageHierarchyResolver pageHierarchyResolver)
         {
-            _contentLoader = contentLoader;
             _pageHierarchyResolver = pageHierarchyResolver;
         }
 

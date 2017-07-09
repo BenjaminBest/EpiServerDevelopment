@@ -217,15 +217,20 @@
     <Compile Include="Extensions\LinkItemExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Features\Base\BlockDataBase.cs" />
-    <Compile Include="Features\Base\GroupNames.cs" />
+    <Compile Include="Features\Base\TabNames.cs" />
     <Compile Include="Features\ContentPage\ContentPage.cs" />
     <Compile Include="Features\ContentPage\ContentPageController.cs" />
     <Compile Include="Features\ContactPage\ContactPage.cs" />
     <Compile Include="Features\ContactPage\ContactPageController.cs" />
     <Compile Include="Features\DisplayOptions\InitializationModule.cs" />
     <Compile Include="Features\DisplayOptions\DisplayOptionsPartialContentController.cs" />
+    <Compile Include="Features\Editors\DatePicker\CustomUiHints.cs" />
+    <Compile Include="Features\Editors\DatePicker\DatePickerEditorDescriptor.cs" />
     <Compile Include="Features\Editors\IconEditor\Icon.cs" />
     <Compile Include="Features\Editors\IconEditor\IconSelectionQuery.cs" />
+    <Compile Include="Features\Editors\StringList\CustomUiHints.cs" />
+    <Compile Include="Features\Editors\StringList\StringListEditorDescriptor.cs" />
+    <Compile Include="Features\Editors\StringList\StringListProperty.cs" />
     <Compile Include="Features\IconListTeaser\IconListTeaserBlock.cs" />
     <Compile Include="Features\IconListTeaser\IconListTeaserProperty.cs" />
     <Compile Include="Features\IconListTeaser\IconTeaserItem.cs" />
@@ -233,6 +238,11 @@
     <Compile Include="Features\Images\ImageExtensions.cs" />
     <Compile Include="Features\Images\LongExtensions.cs" />
     <Compile Include="Features\MetaNavigation\MetaNavigationLinkTemplateResolver.cs" />
+    <Compile Include="Features\MetaTags\IHasMetaTags.cs" />
+    <Compile Include="Features\MetaTags\IMetaTags.cs" />
+    <Compile Include="Features\MetaTags\MetaTagsBlock.cs" />
+    <Compile Include="Features\MetaTags\MetaTagsBlockController.cs" />
+    <Compile Include="Features\MetaTags\MetaTagsViewModel.cs" />
     <Compile Include="Features\OverviewPage\OverviewPage.cs" />
     <Compile Include="Features\GlobalLayout\BaseWebViewPage.cs" />
     <Compile Include="Features\GlobalLayout\ConfigurableModule.cs" />
@@ -263,7 +273,7 @@
     <Compile Include="Features\MetaNavigation\IHasPageMetaNavigation.cs" />
     <Compile Include="Features\MetaNavigation\MetaNavigationBlock.cs" />
     <Compile Include="Features\Pages\PageHierarchyResolver.cs" />
-    <Compile Include="Features\PropertyList\PropertyListBase.cs" />
+    <Compile Include="Features\Base\PropertyListBase.cs" />
     <Compile Include="Features\StartPage\StartPage.cs" />
     <Compile Include="Features\StartPage\StartPageController.cs" />
     <Compile Include="Features\Teasers\DefaultImageDimensions.cs" />
@@ -289,11 +299,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClientResources\scripts\editors\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ClientResources\js\extended-field.js" />
+    <Content Include="ClientResources\Scripts\Editors\stringlist\nls\Labels.js" />
+    <Content Include="ClientResources\Scripts\Editors\stringlist\Editor.js" />
+    <Content Include="ClientResources\Scripts\Editors\stringlist\Template.css" />
+    <Content Include="ClientResources\Scripts\Editors\stringlist\Template.html" />
     <Content Include="favicon.ico" />
     <Content Include="Features\Web.config" />
     <Content Include="Global.asax" />
@@ -307,7 +319,6 @@
     <Content Include="Resources\css\style.css" />
     <Content Include="Resources\fonts\fontawesome-webfont.svg" />
     <Content Include="Resources\fonts\MaterialIcons-Regular.svg" />
-    <Content Include="Resources\img\call-to-action-bg.jpg" />
     <Content Include="Resources\img\clients\clients-logo-9.png" />
     <Content Include="Resources\img\clients\clients-logo1.png" />
     <Content Include="Resources\img\clients\clients-logo10.png" />
@@ -319,9 +330,7 @@
     <Content Include="Resources\img\clients\clients-logo7.png" />
     <Content Include="Resources\img\clients\clients-logo8.png" />
     <Content Include="Resources\img\cotation.png" />
-    <Content Include="Resources\img\featue-bg.jpg" />
     <Content Include="Resources\img\item-img1.jpg" />
-    <Content Include="Resources\img\logo.png" />
     <Content Include="Resources\img\portfolio\work1.jpg" />
     <Content Include="Resources\img\portfolio\work2.jpg" />
     <Content Include="Resources\img\portfolio\work3.jpg" />
@@ -377,6 +386,7 @@
     <Content Include="Resources\fonts\MaterialIcons-Regular.ttf" />
     <Content Include="Resources\fonts\MaterialIcons-Regular.woff" />
     <Content Include="Resources\fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="Features\MetaTags\MetaTagsBlock_Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using EpiServerDevelopment.Features.MetaNavigation;
 using EPiServer.Core;
+using EPiServer.ServiceLocation;
 using EPiServer.Web;
+using EpiServerDevelopment.Features.MetaNavigation;
+using EpiServerDevelopment.Features.MetaTags;
+using EpiServerDevelopment.Features.Pages;
 
 namespace EpiServerDevelopment.Features.GlobalLayout
 {
@@ -44,6 +47,22 @@ namespace EpiServerDevelopment.Features.GlobalLayout
         public ContentReference StartPage { get; set; }
 
         /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the meta tags.
+        /// </summary>
+        /// <value>
+        /// The meta tags.
+        /// </value>
+        public MetaTagsBlock MetaTags { get; set; }
+
+        /// <summary>
         /// Maps the properties of the specified page to this layout model
         /// </summary>
         /// <param name="page">The page.</param>
@@ -53,6 +72,14 @@ namespace EpiServerDevelopment.Features.GlobalLayout
             MetaFooterNavigation = page.MetaFooterNavigation;
             Logo = page.Logo;
             StartPage = ((IContent)page).ContentLink;
+
+            //Current Page
+            //TODO: Mappings from current page should be moved somewhere else
+            var currentPage = ServiceLocator.Current.GetInstance<IPageHierarchyResolver>()
+                .GetCurrentPage<PageDataBase>();
+
+            Title = currentPage.SubTitle;
+            MetaTags = currentPage.MetaTags;
         }
     }
 }

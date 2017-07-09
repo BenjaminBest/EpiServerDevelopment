@@ -1,7 +1,6 @@
 ﻿using System.Drawing;
 using EPiServer.Core;
 using EpiServerDevelopment.Extensions;
-using EpiServerDevelopment.Features.Images;
 using EpiServerDevelopment.Features.Pages;
 using EpiServerDevelopment.Features.Teasers;
 using EpiServerDevelopment.Features.TemplateResolver;
@@ -42,7 +41,7 @@ namespace EpiServerDevelopment.Features.MetaNavigation
                 SubTitle = source.SubTitle,
                 Description = source.Description,
                 ButtonCaption = source.ButtonCaption,
-                Image = source.Images.AsImages().OfSize(ImageMinDimensions.Width, ImageMinDimensions.Height),
+                Image = null,
                 Link = source.ContentLink
             };
 
