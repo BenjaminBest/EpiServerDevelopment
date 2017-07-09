@@ -1,0 +1,27 @@
+﻿@using EpiServerDevelopment.Extensions
+@using EPiServer.Web.Mvc.Html
+
+@model EpiServerDevelopment.Features.IconListTeaser.IconListTeaserBlock
+
+<section id="service">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>@Html.PropertyFor(p=>p.Headline)</h2>
+                <p>@Html.PropertyFor(p=>p.Description)</p>
+            </div>
+        </div>        
+        <div class="row ">
+            @foreach (var item in Model.IconList.EnsureNotNull())
+            {
+                <div class="col-sm-6 col-md-3">
+                    <div class="service-item">
+                        <i class="material-icons">@item.Icon</i>
+                        <h4>@item.Name</h4>
+                        <p>@item.Text</p>
+                    </div>
+                </div>
+            }            
+        </div>
+    </div>
+</section>

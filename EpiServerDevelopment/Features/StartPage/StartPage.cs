@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using EpiServerDevelopment.Features.GlobalLayout;
-using EpiServerDevelopment.Features.Validation;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
+using EpiServerDevelopment.Features.GlobalLayout;
+using EpiServerDevelopment.Features.IconListTeaser;
+using EpiServerDevelopment.Features.Validation;
 
 namespace EpiServerDevelopment.Features.StartPage
 {
@@ -24,5 +25,11 @@ namespace EpiServerDevelopment.Features.StartPage
             GroupName = SystemTabNames.Content)]
         [ContentAreaMaxItems(1)]
         public virtual ContentArea CallToAction { get; set; }
+
+        [Display(
+            Name = "Icon list",
+            Description = "A list of icons with headline and description",
+            GroupName = SystemTabNames.Content)]
+        public virtual IconListTeaserBlock IconList { get; set; }
     }
 }

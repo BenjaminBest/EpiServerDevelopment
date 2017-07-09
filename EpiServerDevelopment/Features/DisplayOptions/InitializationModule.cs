@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Castle.Core.Internal;
+﻿using System.Linq;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
@@ -34,9 +30,10 @@ namespace EpiServerDevelopment.Features.DisplayOptions
                 options.Remove(id);
             }
 
+            //TODO: Initialize automatically
             options
                 .Add("LeftTextTeaser", "Left Text Teaser", "LeftTextTeaser")
-                .Add("RightTextWithImageTeaser", "Right Text with Image Teaser", "RightTextWithImageTeaser");
+                .Add("RightTextParallaxTeaser", "Parallax Teaser", "RightTextParallaxTeaser");
         }
 
         /// <summary>Resets the module into an uninitialized state.</summary>

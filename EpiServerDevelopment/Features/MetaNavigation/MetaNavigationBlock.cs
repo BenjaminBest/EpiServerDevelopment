@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EPiServer.SpecializedProperties;
 using EpiServerDevelopment.Features.Base;
+using EpiServerDevelopment.Features.Pages;
 
 namespace EpiServerDevelopment.Features.MetaNavigation
 {
@@ -15,6 +16,7 @@ namespace EpiServerDevelopment.Features.MetaNavigation
             Name = "Links",
             Description = "The links to be displayed in the meta navigation in the header",
             GroupName = SystemTabNames.Content)]
-        public virtual LinkItemCollection Links { get; set; }
+        [AllowedTypes(typeof(PageDataBase))]
+        public virtual ContentArea Links { get; set; }
     }
 }

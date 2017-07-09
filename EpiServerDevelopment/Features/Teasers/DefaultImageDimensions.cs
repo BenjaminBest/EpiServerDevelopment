@@ -18,9 +18,9 @@ namespace EpiServerDevelopment.Features.Teasers
         /// </summary>
         static DefaultImageDimensions()
         {
+            //TODO: Initialize automatically
             Dimensions.Add("CallToActionTeaser", new Size(1298, 312));
-            Dimensions.Add("LeftTextTeaser", new Size(0, 0));
-            Dimensions.Add("RightTextWithImageTeaser", new Size(2560, 1564));
+            Dimensions.Add("RightTextParallaxTeaser", new Size(2560, 1564));
         }
 
         /// <summary>

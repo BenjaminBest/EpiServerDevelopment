@@ -18,7 +18,7 @@ namespace EpiServerDevelopment
                 "~/Resources/css/bootstrap.min.css",
                 "~/Resources/css/font-awesome.min.css",
                 "~/Resources/css/style.css",
-                "~/Resources/css/ionicons.min.css",
+                "~/Resources/css/material-icons.css",
                 "~/Resources/css/animate.css",
                 "~/Resources/css/responsive.css")
             );

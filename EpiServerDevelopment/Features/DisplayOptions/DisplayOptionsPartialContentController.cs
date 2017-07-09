@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using EpiServerDevelopment.Extensions;
-using EpiServerDevelopment.Features.Pages;
-using EpiServerDevelopment.Features.TemplateResolver;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Framework.Web;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Mvc;
+using EpiServerDevelopment.Extensions;
+using EpiServerDevelopment.Features.Pages;
+using EpiServerDevelopment.Features.TemplateResolver;
 
 namespace EpiServerDevelopment.Features.DisplayOptions
 {
@@ -38,8 +38,6 @@ namespace EpiServerDevelopment.Features.DisplayOptions
         public override ActionResult Index(PageDataBase currentPage)
         {
             var renderSettings = ControllerContext.RouteData.Values["renderSettings"] as Dictionary<string, object>;
-
-            //TODO: Use template resolvers with tag
 
             var content = currentPage.As<PageDataBase>();
 

@@ -211,6 +211,9 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\ContentAreaExtensions.cs" />
+    <Compile Include="Extensions\ContentReferenceExtensions.cs" />
     <Compile Include="Extensions\LinkItemExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Features\Base\BlockDataBase.cs" />
@@ -221,9 +224,15 @@
     <Compile Include="Features\ContactPage\ContactPageController.cs" />
     <Compile Include="Features\DisplayOptions\InitializationModule.cs" />
     <Compile Include="Features\DisplayOptions\DisplayOptionsPartialContentController.cs" />
+    <Compile Include="Features\Editors\IconEditor\Icon.cs" />
+    <Compile Include="Features\Editors\IconEditor\IconSelectionQuery.cs" />
+    <Compile Include="Features\IconListTeaser\IconListTeaserBlock.cs" />
+    <Compile Include="Features\IconListTeaser\IconListTeaserProperty.cs" />
+    <Compile Include="Features\IconListTeaser\IconTeaserItem.cs" />
     <Compile Include="Features\Images\ContentAreaExtensions.cs" />
     <Compile Include="Features\Images\ImageExtensions.cs" />
     <Compile Include="Features\Images\LongExtensions.cs" />
+    <Compile Include="Features\MetaNavigation\MetaNavigationLinkTemplateResolver.cs" />
     <Compile Include="Features\OverviewPage\OverviewPage.cs" />
     <Compile Include="Features\GlobalLayout\BaseWebViewPage.cs" />
     <Compile Include="Features\GlobalLayout\ConfigurableModule.cs" />
@@ -253,9 +262,8 @@
     <Compile Include="Features\IndividualViewLocation\ViewEngineRegistration.cs" />
     <Compile Include="Features\MetaNavigation\IHasPageMetaNavigation.cs" />
     <Compile Include="Features\MetaNavigation\MetaNavigationBlock.cs" />
-    <Compile Include="Features\MetaNavigation\MetaNavigationBlockController.cs" />
-    <Compile Include="Features\MetaNavigation\MetaNavigationBlockViewModel.cs" />
     <Compile Include="Features\Pages\PageHierarchyResolver.cs" />
+    <Compile Include="Features\PropertyList\PropertyListBase.cs" />
     <Compile Include="Features\StartPage\StartPage.cs" />
     <Compile Include="Features\StartPage\StartPageController.cs" />
     <Compile Include="Features\Teasers\DefaultImageDimensions.cs" />
@@ -263,6 +271,7 @@
     <Compile Include="Features\TemplateResolver\ConfigurableModule.cs" />
     <Compile Include="Features\Teasers\DefaultTemplateViewModel.cs" />
     <Compile Include="Features\Teasers\ITeaser.cs" />
+    <Compile Include="Features\TemplateResolver\HtmlExtensionms.cs" />
     <Compile Include="Features\TemplateResolver\ITemplateResolver.cs" />
     <Compile Include="Features\TemplateResolver\ITemplateResolverRegistry.cs" />
     <Compile Include="Features\Teasers\DefaultTemplateResolver.cs" />
@@ -280,7 +289,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ClientResources\scripts\editors\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="ClientResources\js\extended-field.js" />
     <Content Include="favicon.ico" />
@@ -290,12 +301,12 @@
     <Content Include="Resources\css\bootstrap.min.css" />
     <Content Include="Resources\css\editmode.css" />
     <Content Include="Resources\css\font-awesome.min.css" />
-    <Content Include="Resources\css\ionicons.min.css" />
+    <Content Include="Resources\css\material-icons.css" />
     <Content Include="Resources\css\owl.carousel.css" />
     <Content Include="Resources\css\responsive.css" />
     <Content Include="Resources\css\style.css" />
     <Content Include="Resources\fonts\fontawesome-webfont.svg" />
-    <Content Include="Resources\fonts\ionicons.svg" />
+    <Content Include="Resources\fonts\MaterialIcons-Regular.svg" />
     <Content Include="Resources\img\call-to-action-bg.jpg" />
     <Content Include="Resources\img\clients\clients-logo-9.png" />
     <Content Include="Resources\img\clients\clients-logo1.png" />
@@ -345,12 +356,9 @@
     <Content Include="Resources\fonts\fontawesome-webfont.ttf" />
     <Content Include="Resources\fonts\fontawesome-webfont.woff" />
     <Content Include="Resources\fonts\FontAwesome.otf" />
-    <Content Include="Resources\fonts\ionicons.eot" />
-    <Content Include="Resources\fonts\ionicons.ttf" />
-    <Content Include="Resources\fonts\ionicons.woff" />
     <Content Include="Resources\less\responsive.less" />
     <Content Include="Resources\less\style.less" />
-    <Content Include="Features\MetaNavigation\MetaNavigationBlock_Index.cshtml" />
+    <Content Include="Features\MetaNavigation\MetaNavigationLink.cshtml" />
     <Content Include="Features\Header\Header.cshtml" />
     <Content Include="Features\Footer\Footer.cshtml" />
     <Content Include="Features\Images\DisplayTemplates\Image.cshtml" />
@@ -359,8 +367,16 @@
     <Content Include="Features\ContentPage\ContentPage_Index.cshtml" />
     <Content Include="module.config" />
     <Content Include="Features\Teasers\LeftTextTeaser.cshtml" />
-    <Content Include="Features\Teasers\RightTextWithImageTeaser.cshtml" />
+    <Content Include="Features\Teasers\RightTextParallaxTeaser.cshtml" />
     <Content Include="Features\Teasers\CallToActionTeaser.cshtml" />
+    <Content Include="Features\MetaNavigation\MetaNavigationBlock.cshtml" />
+    <Content Include="Features\IconListTeaser\IconListTeaserBlock.cshtml" />
+    <Content Include="Features\Editors\IconEditor\Icons.json" />
+    <Content Include="Resources\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="Resources\fonts\MaterialIcons-Regular.ijmap" />
+    <Content Include="Resources\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="Resources\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="Resources\fonts\MaterialIcons-Regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

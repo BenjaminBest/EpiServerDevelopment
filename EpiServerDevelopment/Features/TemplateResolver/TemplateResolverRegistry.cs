@@ -81,7 +81,7 @@ namespace EpiServerDevelopment.Features.TemplateResolver
         {
             //Get all available teasers
             var templates =
-                _templateCollector.CollectTemplates($"{HostingEnvironment.ApplicationPhysicalPath}/Features/Teasers").ToList();
+                _templateCollector.CollectTemplates($"{HostingEnvironment.ApplicationPhysicalPath}/Features").ToList();
 
             //Get all view resolvers
             var availableResolversTypes = Assembly.GetExecutingAssembly().GetTypes()

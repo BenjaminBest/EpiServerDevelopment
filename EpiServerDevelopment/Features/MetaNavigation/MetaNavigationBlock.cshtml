@@ -1,0 +1,9 @@
+﻿@using EpiServerDevelopment.Extensions
+@using EpiServerDevelopment.Features.TemplateResolver
+@model EpiServerDevelopment.Features.MetaNavigation.MetaNavigationBlock
+
+
+@foreach (var item in Model.Links.FilteredItemsSafe())
+{
+    Html.RenderPartialTemplate("MetaNavigationLink", item);
+}

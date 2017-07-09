@@ -1,0 +1,4 @@
+﻿@using EPiServer.Web.Routing
+@model EpiServerDevelopment.Features.Teasers.DefaultTemplateViewModel
+
+<li><a target="_self" href="@UrlResolver.Current.GetUrl(Model.Link)">@Model.Title</a></li>

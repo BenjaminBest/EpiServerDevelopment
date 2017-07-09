@@ -1,5 +1,8 @@
 # EpiServer Development
 
+## Html, CSS, Fonts
+Material Icons (see https://github.com/google/material-design-icons)
+
 ## Features
 
 ### Feature Folders
@@ -46,3 +49,9 @@ https://tedgustaf.com/blog/2013/how-to-render-pages-in-a-content-area/
 
 ### Validation
 #### Maximum items in content area
+
+### Editors
+#### PropertyList
+See IconListTeaser
+#### Autocomplete Dropdown
+See Icon Editor
